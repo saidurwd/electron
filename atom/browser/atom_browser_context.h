@@ -69,7 +69,7 @@ class AtomBrowserContext : public brightray::BrowserContext {
   std::unique_ptr<WebViewManager> guest_manager_;
   std::unique_ptr<AtomPermissionManager> permission_manager_;
   std::unique_ptr<AtomBlobReader> blob_reader_;
-  std::unique_ptr<AtomCTDelegate> ct_delegate_;
+  std::shared_ptr<AtomCTDelegate> ct_delegate_;
   std::string user_agent_;
   bool use_cache_;
 

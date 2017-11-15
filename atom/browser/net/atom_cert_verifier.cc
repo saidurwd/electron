@@ -147,7 +147,7 @@ class CertVerifierRequest : public AtomCertVerifier::Request {
   base::WeakPtrFactory<CertVerifierRequest> weak_ptr_factory_;
 };
 
-AtomCertVerifier::AtomCertVerifier(AtomCTDelegate* ct_delegate)
+AtomCertVerifier::AtomCertVerifier(std::shared_ptr<AtomCTDelegate> ct_delegate)
     : default_cert_verifier_(net::CertVerifier::CreateDefault()),
       ct_delegate_(ct_delegate) {}
 
